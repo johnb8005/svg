@@ -83,29 +83,29 @@ const Rhombus = props => {
 }
 
 export default props => {
-  const r = 25
-  //const scoords = {x: r * 1.2, y: r*1.2};
+  const r = 25;
 
-  const [ x, setX ] = useState(144);
-  const [ y, setY ] = useState(156);
-
-  const coords = {x: 250, y: 50};
+  const coords = {x: 400, y: 100};
   const w = 53;
   
   const s1 = {x: coords.x + w, y: coords.y};
   const s2 = {x: coords.x, y: coords.y + w};
 
   const { m, q } = equationFromSegment(s1, s2);
-  console.log({m , q})
+  //console.log({m , q})
 
   const s3 = {x: 0}
   s3.y = polyY(s3.x, { m, q });
   const s4 = {y: 0}
   s4.x = polyX(s4.y, { m, q });
 
+  const x0 = 244;
+  const [ x, setX ] = useState(x0);
+  const [ y, setY ] = useState(polyY(x0, { m, q })-w);
+
   const onChange = (e, func) => {
     const v=Number(e.target.value);
-    console.log(v);
+    //console.log(v);
     setX(v);
     const y = polyY(v, {m, q});
     setY(y - w)
