@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router } from 'react-router-dom';
+import * as History from 'history';
 
-import Svg from './svg';
+import AppRouter from './router';
 import * as serviceWorker from './serviceWorker';
 
+const history = History.createBrowserHistory({
+  basename: process.env.PUBLIC_URL || '',
+});
+
 ReactDOM.render(
-  <Svg/>,
+  <Router history={history}>
+    <AppRouter />
+  </Router>,
   document.getElementById('root'),
 );
 
