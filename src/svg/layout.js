@@ -10,6 +10,9 @@ export default props => {
     //const c = { x, y };
     //console.log(c)
   //}
+  //
+  //  {/*preserveAspectRatio="xMinYMin meet"
+  //   onMouseMove={onMouseMove}*/}
 
   return <div style={{
     display: 'inline-block',
@@ -22,8 +25,6 @@ export default props => {
     <svg
       version="1.1"
       viewBox="0 0 800 800" 
-      {/*preserveAspectRatio="xMinYMin meet"
-      onMouseMove={onMouseMove}*/}
       style={{
         border: '1px solid black',
         display: 'inline-block',
