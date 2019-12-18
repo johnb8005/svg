@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Layout } from '../svg';
 import { PathWSquare } from '../svg/path';
@@ -59,6 +59,31 @@ export default props => {
   const [ displayCircles, setDisplayCircles ] = useState(true);
   const [ nIter, setNIter ] = useState(21);
   const [ w, setW ] = useState(.4);
+  const [ animationOn, setAnimationOn ] = useState(false);
+  const wMax = 10;
+  const wMin = .01;
+
+  // https://stackoverflow.com/questions/46160461/how-do-you-set-the-document-title-in-react
+  useEffect(() => {
+   document.title = 'Fibonacci';
+  }, []);
+
+  const keepAnimationRunning = () => {
+    const wInc = .1;
+    const dt = 100;
+
+    if (animationOn === true) {
+      if (wMax > w) {
+        setTimeout(() => {
+          setW(w + wInc);
+        }, dt);
+      } else {
+        setAnimationOn(false);
+      }
+    }
+  }
+
+  keepAnimationRunning()
 
   return <React.Fragment>
     <ul>
@@ -66,7 +91,8 @@ export default props => {
       <li>Display square: <input type="checkbox" checked={displaySquares} onChange={() => setDisplaySquares(!displaySquares)}/></li>
       <li>Display circles: <input type="checkbox" checked={displayCircles} onChange={() => setDisplayCircles(!displayCircles)}/></li>
       <li># iterations: <input type="number" value={nIter} onChange={(e) => setNIter(Number(e.target.value))}/></li>
-      <li>w: <input type="range" min={1} max={1000} value={w*100} onChange={(e) => setW(Number(e.target.value/100))}/></li> 
+      <li>w: <input type="range" min={ wMin * 100 } max={wMax * 100} value={w*100} onChange={(e) => setW(Number(e.target.value/100))}/></li> 
+      <li><button onClick={() => {setW(wMin);setAnimationOn(true)}}>Launch Animation</button></li>
     </ul>
 
     <FiboPaths nIter={nIter} displaySquares={displaySquares} displayCircles={displayCircles} curvatureRatio={curvatureRatio} w={w}/>
