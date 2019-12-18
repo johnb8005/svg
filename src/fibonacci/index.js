@@ -91,7 +91,7 @@ const Path = props => {
 }
 
 const PathWSquare = props => {
-  const { start, end, sense = 1, curvatureRatio = .5, displaySquares = true, displayCircles = true } = props;
+  const { start, end, curvatureRatio = .5, displaySquares = true, displayCircles = true } = props;
 
   const w = Math.abs(start.x - end.x);
 
