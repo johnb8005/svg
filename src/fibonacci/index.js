@@ -49,7 +49,7 @@ const computeDirections = (nIter) => {
 const FiboPaths = props => {
   const { nIter, w, displayCircles, displaySquares, curvatureRatio } = props;
   return <Layout>
-    {computeDirections(nIter).map((_, j) => <PathWSquare key={j} start={{x: 600 + _.dx1*w, y: 300 + _.dy1*w}} end={{x:600 + _.dx2*w, y: 300 + _.dy2*w}} displaySquares={displaySquares} displayCircles={displayCircles} curvatureRatio={curvatureRatio}/>)}
+    {computeDirections(nIter).map((_, j) => <PathWSquare key={j} start={{x: 400 + _.dx1*w, y: 300 + _.dy1*w}} end={{x:400 + _.dx2*w, y: 300 + _.dy2*w}} displaySquares={displaySquares} displayCircles={displayCircles} curvatureRatio={curvatureRatio}/>)}
   </Layout>
 }
 
