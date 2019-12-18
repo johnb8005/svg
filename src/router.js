@@ -6,6 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 
+import Layout from './layout';
 import Eye from './eye';
 import Fibonacci from './fibonacci';
 
@@ -18,14 +19,14 @@ const Public = () => (
 );
 
 function Router(props) {
-  return (
-      <Switch>
-        <Route path="/eye" component={Eye} props={props} />
-        <Route path="/fibonacci" component={Fibonacci} props={props} />
-        <Route path="/" component={Public} props={props} />
-        <Route path="/" component={NotFound} />
-      </Switch>
-  );
+  return (<Layout>
+    <Switch>
+      <Route path="/eye" component={Eye} props={props} />
+      <Route path="/fibonacci" component={Fibonacci} props={props} />
+      <Route path="/" component={Public} props={props} />
+      <Route path="/" component={NotFound} />
+    </Switch>
+  </Layout>);
 }
 
 export default withRouter(Router);
