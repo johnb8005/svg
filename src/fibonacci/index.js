@@ -87,7 +87,7 @@ export default props => {
 
   return <React.Fragment>
     <ul>
-      <li>Curvature ratio: <input type="range" min={0} max={100} onChange={e => setCurvatureRatio(Number(e.target.value)/100)}/> <code>{curvatureRatio}/100</code></li>
+      <li>Curvature ratio: <input type="range" min={0} max={100} onChange={e => setCurvatureRatio(Number(e.target.value)/100)}/> <code>{curvatureRatio.toFixed(2)}</code></li>
       <li>Display square: <input type="checkbox" checked={displaySquares} onChange={() => setDisplaySquares(!displaySquares)}/></li>
       <li>Display circles: <input type="checkbox" checked={displayCircles} onChange={() => setDisplayCircles(!displayCircles)}/></li>
       <li># iterations: <input type="number" value={nIter} onChange={(e) => setNIter(Number(e.target.value))}/></li>
