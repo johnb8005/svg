@@ -16,7 +16,8 @@ const prefix = '';// process.env.PUBLIC_URL || '';
 
 const menus = [ 
   {name: 'Eye', link: '/eye'},
-  {name: 'Fibonacci', link: '/fibonacci'}
+  {name: 'Fibonacci', link: '/fibonacci'},
+  {name: 'Pi', link: '/pi'}
 ];
 
 
