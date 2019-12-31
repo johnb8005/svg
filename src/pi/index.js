@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 import { Layout, Circle, Square } from '../svg';
 
+/**
+ * checks whether point is in circle or not
+ * @param  {[type]} p       point coords
+ * @param  {[type]} circleC circleCenter
+ * @param  {[type]} r       radius
+ * @return boolean
+ */
+const isInCircle = (p, circleC, r) => Math.pow(p.x - circleC.x, 2) + Math.pow(p.y - circleC.y, 2) < Math.pow(r, 2);
+
 export default props => {
   const r = 200;
   const offset = 30;
@@ -17,10 +26,9 @@ export default props => {
     return {x, y};
   });
 
-  const l = peas.map(p => {
-    return Math.pow(p.x - circleC.x, 2) + Math.pow(p.y - circleC.y, 2) < Math.pow(r, 2);
-  })
-  .filter(_ => _ === true).length;
+  const l = peas
+    .map(p => isInCircle(p, circleC, r))
+    .filter(_ => _ === true).length;
 
   const piApprox = 4*l/nPeas;
 
@@ -36,7 +44,7 @@ export default props => {
     <Layout>
     <Circle r={r} coords={circleC}/>
     <Square w={r*2} coords={squareC}/>
-    {peas.map((p, i) => <Circle stroke={'red'} key={i} r={.1} coords={p}/>)}
+    {peas.map((p, i) => <Circle stroke={isInCircle(p, circleC, r) ? 'red': 'blue'} key={i} r={.1} coords={p}/>)}
 
     </Layout>
   </React.Fragment>;
