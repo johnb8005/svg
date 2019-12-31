@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/svg/static/js/main.79a842c2.chunk.js",
-    "main.js.map": "/svg/static/js/main.79a842c2.chunk.js.map",
+    "main.js": "/svg/static/js/main.b2e6af15.chunk.js",
+    "main.js.map": "/svg/static/js/main.b2e6af15.chunk.js.map",
     "runtime-main.js": "/svg/static/js/runtime-main.25c60ff4.js",
     "runtime-main.js.map": "/svg/static/js/runtime-main.25c60ff4.js.map",
     "static/js/2.fcb6ccc0.chunk.js": "/svg/static/js/2.fcb6ccc0.chunk.js",
     "static/js/2.fcb6ccc0.chunk.js.map": "/svg/static/js/2.fcb6ccc0.chunk.js.map",
     "index.html": "/svg/index.html",
-    "precache-manifest.349f9c73580c31779c291ebcf3ae7d87.js": "/svg/precache-manifest.349f9c73580c31779c291ebcf3ae7d87.js",
+    "precache-manifest.0c14c4d2278ae1b823d8c950f973af77.js": "/svg/precache-manifest.0c14c4d2278ae1b823d8c950f973af77.js",
     "service-worker.js": "/svg/service-worker.js"
   }
 }
