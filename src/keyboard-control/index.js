@@ -45,10 +45,7 @@ export default () => {
         <Line p1={{x: 200, y: 150}} p2={{x: 210, y: 50}} stroke={'grey'}/>
         <Line p1={{x: 260, y: 150}} p2={{x: 250, y: 50}} stroke={'grey'}/>
 
-        {/*<Line p1={{x: 230, y: 150 }} p2={{x: 230, y: 130 + (moveIdx > 20 ? 20 : moveIdx)}} stroke={'grey'}/>
-        <Line p1={{x: 230, y: 110 + moveIdx}} p2={{x: 230, y: 90 + moveIdx}} stroke={'grey'}/>
-        <Line p1={{x: 230, y: 70 + moveIdx}} p2={{x: 230, y: 50 + moveIdx}} stroke={'grey'}/>
-<Line p1={{x: 230, y: (moveIdx > 20 ? moveIdx + 30 : 50)}} p2={{x: 230, y: 50}} stroke={'grey'}/>*/}
+
         <MovingDashLines y0={50} y1={150}  x ={230} idx={moveIdx}/>
       </Layout>
   </>;
