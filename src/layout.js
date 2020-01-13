@@ -17,10 +17,10 @@ const prefix = '';// process.env.PUBLIC_URL || '';
 const menus = [ 
   {name: 'Eye', link: '/eye'},
   {name: 'Fibonacci', link: '/fibonacci'},
-  {name: 'Pi', link: '/pi'}
+  {name: 'Pi', link: '/pi'},
+  {name: 'Keyboard Control', link:'/keyboard-control'},
+  {name: 'Hourglass', link:'/hourglass'},
 ];
-
-
 
 function Layout(props) {
   const header = (<header>

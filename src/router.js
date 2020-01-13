@@ -9,6 +9,8 @@ import Layout from './layout';
 import Eye from './eye';
 import Fibonacci from './fibonacci';
 import Pi from './pi';
+import KeyboardControl from 'keyboard-control';
+import Hourglass from './hourglass';
 
 const NotFound = () => <p>Page Not Found</p>;
 const Public = () => (
@@ -22,6 +24,8 @@ function Router(props) {
       <Route path="/eye" component={Eye} props={props} />
       <Route path="/fibonacci" component={Fibonacci} props={props} />
       <Route path="/pi" component={Pi} props={props} />
+      <Route path="/keyboard-control" component={KeyboardControl} props={props} />
+      <Route path="/hourglass" component={Hourglass} props={props} />
       <Route path="/" component={Public} props={props} />
       <Route path="/" component={NotFound} />
     </Switch>
