@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Layout from '../svg/layout';
-import { Trapeze, Triangle, Line, MovingDashLines } from '../svg';
-
+import { Trapeze, Triangle, MovingDashLines } from '../svg';
 
 export default () => {
   const h0=53;
@@ -33,8 +32,8 @@ export default () => {
 
   const hTrapeze = 250-h;
 
-  const fill = '#de' + toHex(h*3) + '7';
-  console.log(`h: ${h}, fill: ${fill}`)
+  const fill = 'grey'// '#de' + toHex(h*3) + '7';
+
 
   return <>
   <input type="range" value={h} min={h0} max={hMax} onChange={e => {
@@ -48,24 +47,9 @@ export default () => {
         <Triangle p1={{x: 50, y: 200}} p2={{x: 150, y: 200}}  p3={{x: 100, y: 125}} />
         <Triangle p1={{x: x1FromY(h), y: h}} p2={{x: x2FromY(h), y: h}}  p3={{x: 100, y: 125}} fill={fill}/>
         <Trapeze p1={{x: x2FromY(hTrapeze), y: hTrapeze}} p2={{x: 50, y: 200}} p3={{x: 150, y: 200}} fill={fill}/>
-        <MovingDashLines idx={h+3} y0={125} y1={200}/>
+        <MovingDashLines idx={h+3} y0={125} y1={200} stroke={fill}/>
       </Layout>
   </>;
 }
 
-const toHex = i => {
-  const a = i%16;
-  const b = (i >> 4)%16;
-  const c = (i >> 8)%16;
 
-  const toUnitHex = i => {
-    if (i < 10) {
-      return String(i);
-    }
-
-    const arr = ['a', 'b', 'c', 'd', 'e', 'f'];
-    return arr[i-10];
-  }
-
-  return  toUnitHex(c) + toUnitHex(b) + toUnitHex(a);
-}

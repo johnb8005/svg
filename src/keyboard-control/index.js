@@ -46,7 +46,7 @@ export default () => {
         <Line p1={{x: 260, y: 150}} p2={{x: 250, y: 50}} stroke={'grey'}/>
 
 
-        <MovingDashLines y0={50} y1={150}  x ={230} idx={moveIdx}/>
+        <MovingDashLines y0={50} y1={145} l={20}  x ={230} idx={moveIdx} stroke={'grey'}/>
       </Layout>
   </>;
 }

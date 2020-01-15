@@ -20,6 +20,7 @@ const menus = [
   {name: 'Pi', link: '/pi'},
   {name: 'Keyboard Control', link:'/keyboard-control'},
   {name: 'Hourglass', link:'/hourglass'},
+  {name: 'Color', link: '/color'}
 ];
 
 function Layout(props) {

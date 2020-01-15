@@ -11,6 +11,7 @@ import Fibonacci from './fibonacci';
 import Pi from './pi';
 import KeyboardControl from 'keyboard-control';
 import Hourglass from './hourglass';
+import Color from './color/rgb';
 
 const NotFound = () => <p>Page Not Found</p>;
 const Public = () => (
@@ -26,6 +27,7 @@ function Router(props) {
       <Route path="/pi" component={Pi} props={props} />
       <Route path="/keyboard-control" component={KeyboardControl} props={props} />
       <Route path="/hourglass" component={Hourglass} props={props} />
+      <Route path="/color" component={Color} props={props} />
       <Route path="/" component={Public} props={props} />
       <Route path="/" component={NotFound} />
     </Switch>
