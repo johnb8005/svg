@@ -1,3 +1,5 @@
+*Deprecated, see new version: https://github.com/johnb8005/svg_ts*
+
 
 # SVG Fun
 
